@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+allprojects {
+		repositories {
+			maven { url "https://jitpack.io" }
+		}
+	}
+
+dependencies {
+	        compile 'com.github.Ullink:simple-slack-api:0.6.0'
+	}
+
+task getDeps(type: Copy) {
+  from sourceSets.main.runtimeClasspath
+  into 'runtime/'
+}
